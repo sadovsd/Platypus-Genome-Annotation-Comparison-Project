@@ -1,12 +1,4 @@
 # Readme.md
-# Bioinformatics Final Project
-
-Members: 
-
-Niithiyn Vijeaswaran
-
-Davyd Sadovskyy
-
 
 ## Gene Annotation Comparison - step by step 
 
