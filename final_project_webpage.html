@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlatypusGenomeAssemblyComparison</title>
+</head>
+
+<body>
+
+
+<p>
+    <h1 style="color: black">Platypus Genome Annotation Comparison<br>Release 108 (Oct 2022) vs Release 97 (July 2019):</h1><br><br>
+    <img src="platypus.png" width="450"><img src="dna.png" width="450"><img src="chrom.png" width="450"><br><hr><br>
+    <table width="800" border=".5" style="border-collapse:collapse;">
+        <tr><td></td> <th>97 Release</th> <th>108 Release</th></tr>
+        <tr><td>Total Genes</td> <td>29776</td> <td>26272</td></tr>
+        <tr><td>Total Transcripts</td> <td>32009</td> <td>42892</td></tr>
+        <tr><td>Chromosomes/Contigs</td> <td>20 chromosomes<br>15122 contigs</td> <td>27 chromosomes<br>62 contigs</td></tr>
+        <tr><td>Genes With Names</td> <td>10027</td> <td>12251</td></tr>
+        <tr><td>Non Redundant Gene Names (gene names that don’t repeat for multiple gene_ids)</td> <td>7192</td> <td>11791</td></tr>
+        <tr><td>Unique Gene Names (gene ids that are only present in one of the releases)</td> <td>3959</td> <td>6194</td></tr>
+        <tr><td>Unique Gene IDs (gene ids that are only present in one of the releases)</td> <td>18879</td> <td>15375</td></tr>
+    </table>
+    <img src="cat_distr_1.png" width="700"><img src="cat_distr_2.png" width="700"><br>
+    <img src="trans_distr_1.png" width="700"><img src="trans_distr_2.png" width="700"><br>
+    <img src="num_transcrips.png" width="700"><hr><br>
+
+<table width="900" border=".5" style="border-collapse:collapse;">
+    <colgroup>
+        <col span="1" style="width: 25%;">
+       <col span="1" style="width: 25%;">
+       <col span="1" style="width: 25%;">
+        <col span="1" style="width: 25%;">
+    </colgroup>
+    <tr VALIGN="top"> <td>Genes in 108 with 10 transcripts: <b>97 total</b><br><br>*Genes with a high number of transcript variants
+         tend to be functionally significant.</td>
+         <td>Genes in 97 with 4 transcripts: <b>4 total</b><br><br>*Genes with a high number of transcript variants
+         tend to be functionally significant.</td>
+         <td>Gene ids that only occur in the release 108: <b>15375 total</b></td>
+         <td>Genes ids with no name in release 97 but were assigned a name in release 108: <b>2574 total</b></td>
+
+    </tr>
+    <tr> <td>ENSOANG00000000679<br>ENSOANG00000000691<br>ENSOANG00000000953</td>
+        <td>ENSOANG00000011379<br>ENSOANG00000012981<br>ENSOANG00000014439</td>
+        <td>ENSOANG00000039864<br>ENSOANG00000041186<br>ENSOANG00000041896</td>
+        <td>ENSOANG00000020697<br>ENSOANG00000003406<br>ENSOANG00000022810</td>
+    </tr>
+</table>
+<br>
+<table width="1200" border=".5" style="border-collapse:collapse;">
+    <col style="width:33%">
+	<col style="width:33%">
+	<col style="width:34%">
+    <tr VALIGN="top">
+        <td>Gene ids that only occur in the release 97 and do not have gene name: <b>14785 total</b><br><br>
+             *For these, there is no easy way of knowing if an analog exists in the 108 release. A
+             possible solution would be to check start/end locations. But even then, chromosomes are
+             altered drastically between annotations and the positions might not map over.</td>
+         <td>Gene ids that only occur in release 97 and have a gene name: <b>4094 total</b><br><br>*The presence of a
+             gene name makes it possible to find an analog in the 108 release by searching for the gene name,
+             but not always, as shown in the examples below.</td>
+         <td>
+            Gene ids that only occur in release 97, but have a name that occurs in a gene with a different gene
+             id in release 108: <b>1114 total</b></td>
+        </tr>
+        <tr>
+            <td>ENSOANG00000033528 → <b>?</b><br>ENSOANG00000022506 → <b>?</b><br>ENSOANG00000034150 → <b>?</b></td>
+            <td>ENSOANG00000011202  → <b>none</b><br>ENSOANG00000027707 → <b>none</b><br>ENSOANG00000011074 → ENSOANG00000047148</td>
+            <td>ENSOANG00000002728  →  ENSOANG00000049528<br>ENSOANG00000006826  →  ENSOANG00000049717<br>
+            ENSOANG00000011649  →  ENSOANG00000041557</td>
+        </tr>
+
+</table>
+
+</p>
+
+<FORM ACTION="gene_compare.py">
+    <p>
+        <br><br>Enter the gene_id you would like to compare<br>
+        <input type="text" name="gene_id" rows="1" cols="40" value=""><br><br>
+        <input type="submit" value="Submit"><br><br>
+    </p>
+</FORM>
+
+</body>
+</html>
